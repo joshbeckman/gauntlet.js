@@ -3,7 +3,11 @@ Gauntlet.js
 
 A wrapper and configuration tool to seamlessly handle multiple Google Analytics accounts.
 
-It's small enough (~2kb) to use without worry. It can even be used just for a single GA account at a time to simply clean and modularize your code.
+It's small enough (<2kb) to use without worry. It can even be used just for a single GA account at a time to simply clean and modularize your code.
+
+## Is it any good?
+
+You bet.
 
 ## Usage
 
@@ -17,7 +21,6 @@ It's as easy as adding [one javascript file](https://github.com/jbckmn/gauntlet.
   if (Gauntlet) {
     // Let's list out our accounts
     var myGauntlet = new Gauntlet({
-      version: 'universal',
       accounts:[
         {
           profile: 'UA-XXXXX-XX',
@@ -30,6 +33,10 @@ It's as easy as adding [one javascript file](https://github.com/jbckmn/gauntlet.
           name: 'BrandAccount'
         }
       ],
+      custom: {
+        'dimension1': 'custom dimension data',
+        'metric2': 'custom metric data'
+      },
       displayFeatures: true
     });
   }
