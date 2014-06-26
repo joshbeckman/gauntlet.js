@@ -38,26 +38,37 @@
       isogram(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     },
     assets: function(){
+      var name, i;
       if(this.opt.displayFeatures){
         window.ga('require', 'displayfeatures');
+        for (i = 1; i < this.accounts.length; i++) {
+          name = this.accounts[i].name || i.toString();
+          window.ga(name + '.require', 'displayfeatures');
+        }
       }
       if(this.opt.linkId){
         window.ga('require', 'linkid', 'linkid.js');
+        for (i = 1; i < this.accounts.length; i++) {
+          name = this.accounts[i].name || i.toString();
+          window.ga(name + '.require', 'linkid', 'linkid.js');
+        }
       }
     },
     view: function(){
-      var name;
+      var name,
+        customObj = extend((this.accounts[0].custom || {}), this.opt.custom);
       window.ga('create', this.accounts[0].profile, this.accounts[0].domain);
-      if (Object.keys(this.opt.custom).length > 0){
-        window.ga('send', 'pageview', this.opt.custom);
+      if (Object.keys(customObj).length > 0){
+        window.ga('send', 'pageview', customObj);
       } else {
         window.ga('send', 'pageview');
       }
       for (var i = 1; i < this.accounts.length; i++) {
         name = this.accounts[i].name || i.toString();
+        customObj = extend((this.accounts[i].custom || {}), this.opt.custom);
         window.ga('create', this.accounts[i].profile, this.accounts[i].domain, {'name': name});
-        if (Object.keys(this.opt.custom).length > 0){
-          window.ga(name + '.send', 'pageview', this.opt.custom);
+        if (Object.keys(customObj).length > 0){
+          window.ga(name + '.send', 'pageview', customObj);
         } else {
           window.ga(name + '.send', 'pageview');
         }

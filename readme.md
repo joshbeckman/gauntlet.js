@@ -3,7 +3,7 @@ Gauntlet.js
 
 A wrapper and configuration tool to seamlessly handle multiple Google Analytics accounts.
 
-It's small enough (<2kb) to use without worry. It can even be used just for a single GA account at a time to simply clean and modularize your code.
+It's small enough (~2kb) to use without worry. It can even be used just for a single GA account at a time to simply clean and modularize your code.
 
 ## Is it any good?
 
