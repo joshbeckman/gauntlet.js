@@ -41,32 +41,32 @@
       var name, i;
       if(this.opt.displayFeatures){
         window.ga('require', 'displayfeatures');
-        for (i = 1; i < this.accounts.length; i++) {
-          name = this.accounts[i].name || i.toString();
+        for (i = 1; i < this.opt.accounts.length; i++) {
+          name = this.opt.accounts[i].name || i.toString();
           window.ga(name + '.require', 'displayfeatures');
         }
       }
       if(this.opt.linkId){
         window.ga('require', 'linkid', 'linkid.js');
-        for (i = 1; i < this.accounts.length; i++) {
-          name = this.accounts[i].name || i.toString();
+        for (i = 1; i < this.opt.accounts.length; i++) {
+          name = this.opt.accounts[i].name || i.toString();
           window.ga(name + '.require', 'linkid', 'linkid.js');
         }
       }
     },
     view: function(){
       var name,
-        customObj = extend((this.accounts[0].custom || {}), this.opt.custom);
-      window.ga('create', this.accounts[0].profile, this.accounts[0].domain);
+        customObj = extend((this.opt.accounts[0].custom || {}), this.opt.custom);
+      window.ga('create', this.opt.accounts[0].profile, this.opt.accounts[0].domain);
       if (Object.keys(customObj).length > 0){
         window.ga('send', 'pageview', customObj);
       } else {
         window.ga('send', 'pageview');
       }
-      for (var i = 1; i < this.accounts.length; i++) {
-        name = this.accounts[i].name || i.toString();
-        customObj = extend((this.accounts[i].custom || {}), this.opt.custom);
-        window.ga('create', this.accounts[i].profile, this.accounts[i].domain, {'name': name});
+      for (var i = 1; i < this.opt.accounts.length; i++) {
+        name = this.opt.accounts[i].name || i.toString();
+        customObj = extend((this.opt.accounts[i].custom || {}), this.opt.custom);
+        window.ga('create', this.opt.accounts[i].profile, this.opt.accounts[i].domain, {'name': name});
         if (Object.keys(customObj).length > 0){
           window.ga(name + '.send', 'pageview', customObj);
         } else {
