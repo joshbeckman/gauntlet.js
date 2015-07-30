@@ -9,6 +9,12 @@ It's small enough (~2kb) to use without worry. It can even be used just for a si
 
 You bet.
 
+## Installation
+
+```shell
+bower install gauntletjs
+```
+
 ## Usage
 
 It's as easy as adding [one javascript file](https://github.com/jbckmn/gauntlet.js/blob/master/dist/gauntlet.min.js) to your document, and defining the Google Analytics profiles to which you will send data.
