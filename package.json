@@ -1,10 +1,9 @@
 {
   "name": "Gauntlet.js",
-  "version": "1.2.0",
-  "private": true,
+  "version": "1.1.0",
   "license": "MIT",
   "description": "A wrapper and configuration tool to handle multiple Google Analytics accounts",
-  "author": "Joshua Beckman <@jbckmn> http://andjosh.com",
+  "author": "Joshua Beckman <@andjosh> http://andjosh.com",
   "repository": {
     "type": "git",
     "url": "git@github.com:andjosh/gauntlet.js.git"
