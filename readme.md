@@ -53,7 +53,7 @@ Alternatively, you can download the Gauntlet source and bundle/minify it into yo
 
 ## Author
 
-[Joshua Beckman](http://www.andjosh.com): [@jbckmn](https://twitter.com/jbckmn)
+[Joshua Beckman](http://www.andjosh.com)
 
 ## License
 
