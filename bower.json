@@ -1,0 +1,28 @@
+{
+  "name": "gauntletjs",
+  "version": "1.0.0",
+  "homepage": "https://github.com/andjosh/gauntlet.js",
+  "authors": [
+    "andjosh <email@andjosh.com>"
+  ],
+  "description": "Wrapper and configuration tool to seamlessly handle multiple Google Analytics accounts on any page. Also accepts custom dimensions and metrics",
+  "main": "dist/gauntlet.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Google",
+    "Analytics",
+    "multiple",
+    "accounts",
+    "tracking"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
