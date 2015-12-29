@@ -1,6 +1,6 @@
 // Gauntlet: A wrapper and configuration tool to 
 // handle multiple Google Analytics accounts
-// Version 1.0.0
+// Version 1.0.1
 // Author: Joshua Beckman | @andjosh
 // Author URI: http://www.andjosh.com
 
