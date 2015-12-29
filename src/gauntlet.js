@@ -1,7 +1,7 @@
 // Gauntlet: A wrapper and configuration tool to 
 // handle multiple Google Analytics accounts
-// Version 1.0.0
-// Author: Joshua Beckman | @jbckmn
+// Version 1.1.1
+// Author: Joshua Beckman | @andjosh
 // Author URI: http://www.andjosh.com
 
 (function(window,document){
@@ -43,16 +43,14 @@
         window.ga('require', 'displayfeatures');
         for (i = 1; i < this.opt.accounts.length; i++) {
           name = this.opt.accounts[i].name;
-          name = name ? (name + '.') : '';
-          window.ga(name + 'require', 'displayfeatures');
+          window.ga(name + '.require', 'displayfeatures');
         }
       }
       if(this.opt.linkId){
         window.ga('require', 'linkid', 'linkid.js');
         for (i = 1; i < this.opt.accounts.length; i++) {
           name = this.opt.accounts[i].name;
-          name = name ? (name + '.') : '';
-          window.ga(name + 'require', 'linkid', 'linkid.js');
+          window.ga(name + '.require', 'linkid', 'linkid.js');
         }
       }
     },
@@ -67,13 +65,12 @@
       }
       for (var i = 1; i < this.opt.accounts.length; i++) {
         name = this.opt.accounts[i].name;
-        name = name ? (name + '.') : '';
-        customObj = extend((this.opt.accounts[i].custom || {}), this.opt.custom);
         window.ga('create', this.opt.accounts[i].profile, this.opt.accounts[i].domain, {'name': name});
+        customObj = extend((this.opt.accounts[i].custom || {}), this.opt.custom);
         if (Object.keys(customObj).length > 0){
-          window.ga(name + 'send', 'pageview', customObj);
+          window.ga(name + '.send', 'pageview', customObj);
         } else {
-          window.ga(name + 'send', 'pageview');
+          window.ga(name + '.send', 'pageview');
         }
       }
     }
